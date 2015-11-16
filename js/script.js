@@ -43,6 +43,7 @@ angular.module("myApp",[]).controller('myController',function($scope){
 	}
 	$scope.deleteHouse = function(){
 		$scope.name = this.house.name;
+		$scope.url = this.house.image;
 		index = houseArray.indexOf(this.house);
 		setView('delete');
 	}
@@ -53,7 +54,8 @@ angular.module("myApp",[]).controller('myController',function($scope){
 		setView('list');
 		var firstHalf = houseArray.slice(0,index);
 		var secondHalf = houseArray.slice(index+1,houseArray.length)
-		$scope.houses = firstHalf.concat(secondHalf);
+		houseArray = firstHalf.concat(secondHalf)
+		$scope.houses = houseArray;
 	}
 	$scope.editHouse = function(){
 		setView('edit');
