@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>House List</title>
+  <link href="bootstrap.min.css" rel="stylesheet" />
+  <script src="jquery.min.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body ng-controller="myController">
+  <div class="container-fluid">
+    <h1>My Houses List (with AngularJS)</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="house in houses">
+        <h3>{{house.name}}</h3>
+        <p><img src="{{house.image}}" width="300px" height="200px"></p>
+        <h4>{{house.address}}, <br/>{{house.city}}, {{house.state}} {{house.zip}}</h4>
+        <h4>{{house.saleStatus}}</h4>
+        <h4>{{house.listPrice}}</h4>
+        <h4>Zestimate®: {{house.zEstimate}}</h4>
+        <h4>{{house.deal}}</h4>
+        <h4>Estimated Mortgage: {{house.mortgage}}</h4>
+      </div> 
+    </div> 
+  </div>
+</body>
+</html>
