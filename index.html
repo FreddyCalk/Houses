@@ -28,10 +28,10 @@
           <p><img src="{{house.image}}" width="300px" height="200px"></p>
           <h4>{{house.address}}, <br/>{{house.city}}, {{house.state}} {{house.zip}}</h4>
           <h4>{{house.saleStatus}}</h4>
-          <h4>{{house.listPrice}}</h4>
-          <h4>Zestimate&#174: {{house.zEstimate}}</h4>
+          <h4>${{house.listPrice}}</h4>
+          <h4>Zestimate&#174: ${{house.zEstimate}}</h4>
           <h4>{{house.deal}}</h4>
-          <h4>Estimated Mortgage: {{house.mortgage}}</h4>
+          <h4>Estimated Mortgage: ${{house.mortgage}}/mo</h4>
           <button class="btn btn-warning btn-sm" val='{{$index}}' ng-click="editHouse()">Edit</button>
           <button class="btn btn-danger btn-sm" val='{{$index}}' ng-click="deleteHouse()">Delete</button> 
         </div> 
@@ -39,7 +39,7 @@
     </div>
     <div ng-show="view == 'delete'">
       <h3> Confirm Delete</h3>
-      <p><img src='{{url}}' width="300px" height="200px"></p>
+      <p><img src="{{url}}" width="300px" height="200px"></p>
       <p> Are you sure you want to delete this house: {{name}}? </p>
       <button class="btn btn-warning btn-sm" ng-click = "view = 'list'"> No </button>
       <button class="btn btn-danger btn-sm" ng-click="removeHouse()"> Yes </button>
@@ -55,6 +55,9 @@
       <input class='form-control input-lg new-house' id="house-name" type='text' placeholder='House Name'>
       <input class='form-control input-lg new-house' id="photo-url" type='text' placeholder='Photo URL'>
       <input class='form-control input-lg new-house' id="address" type='text' placeholder='Address'>
+      <input class='form-control input-lg new-house' id="city" type='text' placeholder='City'>
+      <input class='form-control input-lg new-house' id="state" type='text' placeholder='State'>
+      <input class='form-control input-lg new-house' id="zip" type='text' placeholder='Zip Code'>
       <input class='form-control input-lg new-house' id="sale-status" type='text' placeholder='For Sale/NOT for Sale'>
       <input class='form-control input-lg new-house' id="price" type='text' placeholder='Price'>
       <input class='form-control input-lg new-house' id="zestimate" type='text' placeholder='Zestimate'>
